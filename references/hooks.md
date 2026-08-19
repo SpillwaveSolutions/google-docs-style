@@ -1,8 +1,7 @@
-# Hooks and adapters
+# Hooks and first-class plugin adapters
 
-This plugin ships one formatter and several hook manifests. Each platform
-loads the adapter that matches its hook contract. All adapters call
-`hooks/run.sh`, which runs `hooks/run.py`.
+This plugin ships one formatter and native plugin manifests. Each host loads
+its own manifest. All hosts call `hooks/run.sh`.
 
 ## Shared runner
 
@@ -22,45 +21,65 @@ Plugin root discovery order:
 3. `PLUGIN_ROOT`
 4. Parent of `hooks/`
 
+The shared `hooks/hooks.json` command is:
+
+```bash
+bash "${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}"/hooks/run.sh
+```
+
+Codex also sets `CLAUDE_PLUGIN_ROOT` for compatibility.
+
+## Grok Build
+
+- Manifest: `.grok-plugin/plugin.json`
+- Marketplace: `.grok-plugin/marketplace.json`
+- Hooks: `hooks/hooks.json`
+- Env: `GROK_PLUGIN_ROOT`, `GROK_PLUGIN_DATA`
+
+Install:
+
+```bash
+grok plugin install https://github.com/SpillwaveSolutions/google-docs-style --trust
+```
+
 ## Claude Code
 
 - Manifest: `.claude-plugin/plugin.json`
-- Hooks: `hooks/hooks.json` and `adapters/claude/hooks.json`
-- Events: `SessionStart`, `UserPromptSubmit`, `PreToolUse`, `PostToolUse`, `Stop`
+- Marketplace: `.claude-plugin/marketplace.json` (`source: "./"`)
+- Hooks: `hooks/hooks.json`
+- Output style: `output-styles/google-docs.md`
+- Commands: `commands/`
 - Env: `CLAUDE_PLUGIN_ROOT`
+
+Install:
+
+```text
+/plugin marketplace add SpillwaveSolutions/google-docs-style
+/plugin install google-docs-style@spillwave-google-docs-style
+```
 
 ## Codex
 
 - Manifest: `.codex-plugin/plugin.json`
-- Hooks: `adapters/codex/hooks.json`
-- Events: `SessionStart`, `UserPromptSubmit`, `PreToolUse` (`Write|Edit|apply_patch`), `PostToolUse`, `Stop`
+- Marketplace: `.agents/plugins/marketplace.json`
+- Hooks: `hooks/hooks.json`
 - Env: `PLUGIN_ROOT`
-- Enable hooks in Codex if your build requires `features.codex_hooks`.
+
+Install:
+
+```bash
+codex plugin marketplace add SpillwaveSolutions/google-docs-style
+```
+
+Enable hooks in Codex if your build requires `features.codex_hooks`.
 
 ## Cursor
 
-- Project file: `.cursor/hooks.json`
+- Manifest: `.cursor-plugin/plugin.json`
+- Project hooks: `.cursor/hooks.json`
 - Adapter: `adapters/cursor/hooks.json`
-- Events: `sessionStart`, `beforeSubmitPrompt`, `preToolUse`, `afterFileEdit`, `stop`
-- Copy `adapters/cursor/hooks.json` to `.cursor/hooks.json` in the target repo, or install this repository as a Cursor plugin.
-
-Cursor is part of the universal agent plugin standard. The Cursor adapter
-registers the same formatter used by Codex, Claude Code, and Grok Build.
-
-## Grok Build
-
-- Adapter: `adapters/grok/hooks.json`
-- Project file: `.grok/hooks.json`
-- Events match the Claude-compatible set
-- Env: `GROK_PLUGIN_ROOT`, `GROK_PLUGIN_DATA`
 
 ## Universal plugin
 
 `plugin.json` follows [Agent Plugins v1](https://agent-plugins.org/specification).
-Client-specific hook paths sit under `extensions`.
-
-Skilz install uses the root `SKILL.md`:
-
-```bash
-skilz install https://github.com/SpillwaveSolutions/google-docs-style
-```
+Host manifests sit under `extensions`.

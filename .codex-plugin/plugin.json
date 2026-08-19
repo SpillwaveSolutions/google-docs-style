@@ -1,6 +1,37 @@
 {
   "name": "google-docs-style",
-  "version": "1.0.0",
-  "description": "Google developer documentation style for Codex plans and docs.",
-  "hooks": "./hooks/hooks.json"
+  "version": "1.1.0",
+  "description": "Google developer documentation style for Codex plans and docs. Bundles a skill, formatter, and lifecycle hooks.",
+  "author": {
+    "name": "Spillwave Solutions",
+    "email": "rick@spillwave.com",
+    "url": "https://spillwave.com"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "repository": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "google-developer-docs",
+    "planning",
+    "hooks",
+    "formatter"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Google docs style",
+    "shortDescription": "Google developer documentation style for plans and docs",
+    "longDescription": "Write plans, design docs, READMEs, ADRs, and how-to guides in Google developer documentation style. Hooks inject the same rules on session start, prompt submit, and document writes. A formatter rewrites headings and flags voice issues.",
+    "developerName": "Spillwave Solutions",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/SpillwaveSolutions/google-docs-style",
+    "defaultPrompt": [
+      "Write this plan in Google developer documentation style.",
+      "Format this markdown with google-docs-style.",
+      "Create a how-to guide using the Google docs style templates."
+    ],
+    "brandColor": "#4285F4"
+  }
 }

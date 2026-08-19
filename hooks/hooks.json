@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/run.sh",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}\"/hooks/run.sh",
             "statusMessage": "Loading Google docs style",
             "timeout": 15
           }
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/run.sh",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}\"/hooks/run.sh",
             "statusMessage": "Applying Google docs style",
             "timeout": 15
           }
@@ -31,7 +31,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/run.sh",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}\"/hooks/run.sh",
             "statusMessage": "Checking document style",
             "timeout": 20
           }
@@ -44,7 +44,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/run.sh",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}\"/hooks/run.sh",
             "statusMessage": "Formatting document style",
             "timeout": 20
           }
@@ -56,7 +56,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash ${CLAUDE_PLUGIN_ROOT}/hooks/run.sh",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT:-${GROK_PLUGIN_ROOT:-${PLUGIN_ROOT}}}\"/hooks/run.sh",
             "statusMessage": "Google docs style wrap-up",
             "timeout": 15
           }

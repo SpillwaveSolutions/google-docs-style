@@ -1,0 +1,23 @@
+{
+  "name": "spillwave-google-docs-style",
+  "description": "Spillwave marketplace for the Google developer documentation style plugin.",
+  "owner": {
+    "name": "Spillwave Solutions"
+  },
+  "plugins": [
+    {
+      "name": "google-docs-style",
+      "description": "Google developer documentation style for plans and documents. Skill, formatter, commands, and hooks.",
+      "category": "development",
+      "source": {
+        "type": "local",
+        "path": "."
+      },
+      "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
+      "keywords": [
+        "google-docs-style",
+        "google-developer-docs"
+      ]
+    }
+  ]
+}

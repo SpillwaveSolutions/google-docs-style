@@ -4,7 +4,7 @@ description: Write and format planning docs, design docs, READMEs, ADRs, and tec
 license: MIT
 metadata:
   author: Spillwave Solutions
-  version: "1.0.0"
+  version: "1.1.0"
   organization: SpillwaveSolutions
 ---
 

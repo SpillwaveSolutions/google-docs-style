@@ -1,0 +1,27 @@
+{
+  "name": "spillwave-google-docs-style",
+  "owner": {
+    "name": "Spillwave Solutions",
+    "email": "rick@spillwave.com"
+  },
+  "metadata": {
+    "description": "Google developer documentation style plugin for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "google-docs-style",
+      "source": "./",
+      "description": "Google developer documentation style for plans and documents. Skill, slash commands, output style, formatter, and hooks.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Spillwave Solutions"
+      },
+      "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
+      "keywords": [
+        "documentation",
+        "google-style",
+        "planning"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "google-docs-style",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Universal agent plugin for Google developer documentation style. Skills, a custom output formatter, and hooks for Claude Code, Codex, Cursor, and Grok Build.",
   "author": {
     "name": "Spillwave Solutions",
@@ -30,13 +30,14 @@
     },
     "com.openai.codex": {
       "pluginManifest": ".codex-plugin/plugin.json",
-      "hooks": "adapters/codex/hooks.json"
+      "hooks": "hooks/hooks.json"
     },
     "com.cursor.hooks": {
       "hooks": "adapters/cursor/hooks.json"
     },
     "ai.xai.grok-build": {
-      "hooks": "adapters/grok/hooks.json"
+      "pluginManifest": ".grok-plugin/plugin.json",
+      "hooks": "hooks/hooks.json"
     }
   }
 }
