@@ -1,0 +1,14 @@
+{
+  "name": "google-docs-style",
+  "version": "1.0.0",
+  "description": "Google developer documentation style for planning and documents. Bundles a skill, formatter, and hooks.",
+  "author": {
+    "name": "Spillwave Solutions"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "repository": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "license": "MIT",
+  "keywords": ["documentation", "google-style", "hooks", "formatter", "planning"],
+  "skills": ["./skills/google-docs-style"],
+  "hooks": "./hooks/hooks.json"
+}

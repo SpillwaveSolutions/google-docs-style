@@ -1,0 +1,6 @@
+{
+  "name": "google-docs-style",
+  "version": "1.0.0",
+  "description": "Google developer documentation style for Codex plans and docs.",
+  "hooks": "./hooks/hooks.json"
+}

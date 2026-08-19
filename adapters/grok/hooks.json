@@ -1,0 +1,67 @@
+{
+  "description": "Grok Build adapter for Google developer documentation style.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${GROK_PLUGIN_ROOT}/hooks/run.sh",
+            "statusMessage": "Loading Google docs style",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${GROK_PLUGIN_ROOT}/hooks/run.sh",
+            "statusMessage": "Applying Google docs style",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${GROK_PLUGIN_ROOT}/hooks/run.sh",
+            "statusMessage": "Checking document style",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|apply_patch",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${GROK_PLUGIN_ROOT}/hooks/run.sh",
+            "statusMessage": "Formatting document style",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ${GROK_PLUGIN_ROOT}/hooks/run.sh",
+            "statusMessage": "Google docs style wrap-up",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "google-docs-style",
+  "version": "1.0.0",
+  "description": "Universal agent plugin for Google developer documentation style. Skills, a custom output formatter, and hooks for Claude Code, Codex, Cursor, and Grok Build.",
+  "author": {
+    "name": "Spillwave Solutions",
+    "email": "rick@spillwave.com",
+    "url": "https://spillwave.com"
+  },
+  "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "repository": "https://github.com/SpillwaveSolutions/google-docs-style",
+  "license": "MIT",
+  "keywords": [
+    "documentation",
+    "google-developer-docs",
+    "style-guide",
+    "hooks",
+    "formatter",
+    "claude-code",
+    "codex",
+    "cursor",
+    "grok-build",
+    "agentskills"
+  ],
+  "extensions": {
+    "com.anthropic.claude-code": {
+      "pluginManifest": ".claude-plugin/plugin.json",
+      "hooks": "hooks/hooks.json"
+    },
+    "com.openai.codex": {
+      "pluginManifest": ".codex-plugin/plugin.json",
+      "hooks": "adapters/codex/hooks.json"
+    },
+    "com.cursor.hooks": {
+      "hooks": "adapters/cursor/hooks.json"
+    },
+    "ai.xai.grok-build": {
+      "hooks": "adapters/grok/hooks.json"
+    }
+  }
+}

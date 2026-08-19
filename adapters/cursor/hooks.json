@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "hooks/run.sh"
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "hooks/run.sh"
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "hooks/run.sh"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "hooks/run.sh"
+      }
+    ],
+    "stop": [
+      {
+        "command": "hooks/run.sh"
+      }
+    ]
+  }
+}
