@@ -16,7 +16,9 @@
       "homepage": "https://github.com/SpillwaveSolutions/google-docs-style",
       "keywords": [
         "google-docs-style",
-        "google-developer-docs"
+        "google-developer-docs",
+        "worklog",
+        "wiki-ticket-sdd"
       ]
     }
   ]

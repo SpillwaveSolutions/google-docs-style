@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "google-docs-style",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Universal agent plugin for Google developer documentation style. Skills, a custom output formatter, and hooks for Claude Code, Codex, Cursor, and Grok Build.",
   "author": {
     "name": "Spillwave Solutions",
@@ -21,7 +21,9 @@
     "codex",
     "cursor",
     "grok-build",
-    "agentskills"
+    "agentskills",
+    "worklog",
+    "wiki-ticket-sdd"
   ],
   "extensions": {
     "com.anthropic.claude-code": {

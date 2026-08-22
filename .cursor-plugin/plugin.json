@@ -1,6 +1,6 @@
 {
   "name": "google-docs-style",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Google developer documentation style for Cursor plans and docs. Skill, formatter, and Cursor hooks.",
   "author": {
     "name": "Spillwave Solutions",
@@ -13,7 +13,9 @@
     "google-docs-style",
     "documentation",
     "cursor",
-    "hooks"
+    "hooks",
+    "worklog",
+    "wiki-ticket-sdd"
   ],
   "skills": "./skills/",
   "hooks": "./hooks/cursor-hooks.json"

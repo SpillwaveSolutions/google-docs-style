@@ -1,7 +1,7 @@
 {
   "name": "google-docs-style",
   "displayName": "Google docs style",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Google developer documentation style for planning and documents. Bundles a skill, slash commands, output style, formatter, and hooks.",
   "author": {
     "name": "Spillwave Solutions",
@@ -17,7 +17,9 @@
     "hooks",
     "formatter",
     "planning",
-    "output-style"
+    "output-style",
+    "worklog",
+    "wiki-ticket-sdd"
   ],
   "defaultEnabled": true,
   "skills": "./skills/",

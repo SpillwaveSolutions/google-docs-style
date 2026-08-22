@@ -1,6 +1,6 @@
 {
   "name": "google-docs-style",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Google developer documentation style for Codex plans and docs. Bundles a skill, formatter, and lifecycle hooks.",
   "author": {
     "name": "Spillwave Solutions",
@@ -15,7 +15,9 @@
     "google-developer-docs",
     "planning",
     "hooks",
-    "formatter"
+    "formatter",
+    "worklog",
+    "wiki-ticket-sdd"
   ],
   "skills": "./skills/",
   "hooks": "./hooks/codex-hooks.json",

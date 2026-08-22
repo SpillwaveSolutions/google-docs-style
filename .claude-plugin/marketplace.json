@@ -12,7 +12,7 @@
       "name": "google-docs-style",
       "source": "./",
       "description": "Google developer documentation style for plans and documents. Skill, slash commands, output style, formatter, and hooks.",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "author": {
         "name": "Spillwave Solutions"
       },
@@ -20,7 +20,9 @@
       "keywords": [
         "documentation",
         "google-style",
-        "planning"
+        "planning",
+        "worklog",
+        "wiki-ticket-sdd"
       ]
     }
   ]
