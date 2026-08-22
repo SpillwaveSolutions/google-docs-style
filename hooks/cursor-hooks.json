@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "description": "Cursor-native hook port of Claude Code hooks.json. Shared scripts; event names mapped.",
+  "hooks": {
+    "sessionStart": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "timeout": 15
+      }
+    ],
+    "beforeSubmitPrompt": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "timeout": 15
+      }
+    ],
+    "preToolUse": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "matcher": "Write|Edit|apply_patch",
+        "timeout": 20
+      }
+    ],
+    "postToolUse": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "matcher": "Write|Edit|apply_patch",
+        "timeout": 20
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "timeout": 20
+      }
+    ],
+    "stop": [
+      {
+        "command": "bash ./hooks/run.sh",
+        "timeout": 15
+      }
+    ]
+  }
+}

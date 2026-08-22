@@ -16,5 +16,5 @@
     "hooks"
   ],
   "skills": "./skills/",
-  "hooks": "./adapters/cursor/hooks.json"
+  "hooks": "./hooks/cursor-hooks.json"
 }
