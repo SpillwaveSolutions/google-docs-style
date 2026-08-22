@@ -1,6 +1,6 @@
 {
   "name": "google-docs-style",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Google developer documentation style for plans and documents. Skill, formatter, slash commands, and lifecycle hooks.",
   "author": {
     "name": "Spillwave Solutions",
