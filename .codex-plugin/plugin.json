@@ -18,14 +18,17 @@
     "formatter"
   ],
   "skills": "./skills/",
-  "hooks": "./hooks/hooks.json",
+  "hooks": "./hooks/codex-hooks.json",
   "interface": {
     "displayName": "Google docs style",
     "shortDescription": "Google developer documentation style for plans and docs",
     "longDescription": "Write plans, design docs, READMEs, ADRs, and how-to guides in Google developer documentation style. Hooks inject the same rules on session start, prompt submit, and document writes. A formatter rewrites headings and flags voice issues.",
     "developerName": "Spillwave Solutions",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "websiteURL": "https://github.com/SpillwaveSolutions/google-docs-style",
     "defaultPrompt": [
       "Write this plan in Google developer documentation style.",
