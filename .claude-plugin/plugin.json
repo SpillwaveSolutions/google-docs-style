@@ -1,7 +1,7 @@
 {
   "name": "google-docs-style",
   "displayName": "Google docs style",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "description": "Google developer documentation style for planning and documents. Bundles a skill, slash commands, output style, formatter, and hooks.",
   "author": {
     "name": "Spillwave Solutions",
@@ -24,7 +24,6 @@
   "defaultEnabled": true,
   "skills": "./skills/",
   "commands": "./commands/",
-  "agents": "./agents/",
-  "hooks": "./hooks/hooks.json",
+  "agents": ["./agents/docs-writer.md"],
   "outputStyles": "./output-styles/"
 }
