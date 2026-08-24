@@ -14,6 +14,19 @@ Apply the [Google developer documentation style guide](https://developers.google
 
 This skill is the source of truth. Platform hooks inject the same rules before planning and before writing docs.
 
+## Exclusive with STE100
+
+`google-docs-style` and `ste100` are alternate voice packs. Use exactly one
+per document. Do not mix them.
+
+`document-specialist` defaults to STE100. Activate this skill only when the
+user names Google style, Google developer docs, or the Google style guide.
+
+Hard bans that still apply here:
+
+- No em dash (`—`) and no `--` used as an em dash.
+- Do not start a sentence with **So**, **That**, **Thus**, or **Hence**.
+
 ## When to use this skill
 
 Use this skill when you:
