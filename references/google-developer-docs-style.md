@@ -80,7 +80,7 @@ Required plan sections:
 | Rule | Formatter action |
 | --- | --- |
 | Sentence case headings | Rewrite title case headings |
-| Em dashes | Replace with a period or comma |
+| Em dashes | Replace Unicode `—` / `–` with a period or comma. Leave ASCII `--` alone |
 | Active voice | Lint only |
 | Second person | Lint `we` / `let's` |
 | Weak openers | Lint sentences that start with So, That, Thus, Hence |

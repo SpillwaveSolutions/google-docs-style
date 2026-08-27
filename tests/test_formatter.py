@@ -45,6 +45,24 @@ class FormatTests(unittest.TestCase):
         self.assertNotIn("—", out)
         self.assertTrue("plan, then" in out or "plan. then" in out or "plan. Then" in out)
 
+    def test_preserves_ascii_double_hyphen(self):
+        text = "# Title\n\nRun git checkout -- theirs to keep the incoming file.\n"
+        out = format_markdown(text)
+        self.assertIn("checkout -- theirs", out)
+        self.assertNotIn("checkout, theirs", out)
+        self.assertNotIn("—", out)
+
+    def test_preserves_double_hyphen_in_inline_code(self):
+        text = "# Title\n\nRun `git checkout -- theirs`.\n"
+        out = format_markdown(text)
+        self.assertIn("`git checkout -- theirs`", out)
+
+    def test_preserves_end_of_options_separator(self):
+        text = "# Title\n\nPass flags after -- like npm test -- --coverage.\n"
+        out = format_markdown(text)
+        self.assertIn("after -- like", out)
+        self.assertIn("test -- --coverage", out)
+
     def test_formats_heading(self):
         text = "# Install The Plugin\n\nDo the thing.\n"
         out = format_markdown(text)
@@ -72,6 +90,16 @@ class LintTests(unittest.TestCase):
         text = "# Guide\n\nSo you run the installer.\n"
         rules = {f.rule for f in lint_markdown(text)}
         self.assertIn("weak-opener", rules)
+
+    def test_does_not_flag_ascii_double_hyphen(self):
+        text = "# Guide\n\nRun git checkout -- theirs.\n"
+        rules = {f.rule for f in lint_markdown(text)}
+        self.assertNotIn("em-dash", rules)
+
+    def test_flags_unicode_em_dash(self):
+        text = "# Guide\n\nThe agent writes the plan — then it formats the doc.\n"
+        rules = {f.rule for f in lint_markdown(text)}
+        self.assertIn("em-dash", rules)
 
 
 class PathTests(unittest.TestCase):

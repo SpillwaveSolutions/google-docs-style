@@ -117,7 +117,9 @@ PASSIVE_RE = re.compile(
     re.IGNORECASE,
 )
 WE_RE = re.compile(r"\b(?:we|we're|we've|we'll|let's|lets)\b", re.IGNORECASE)
-EMDASH_RE = re.compile(r"\s*[—–]\s*|\s+--\s+")
+# Unicode em/en dashes only. Do not treat ASCII "--" as an em dash:
+# it is a CLI end-of-options marker, a flag prefix, and HTML comment syntax.
+EMDASH_RE = re.compile(r"\s*[—–]\s*")
 TITLE_WORD_RE = re.compile(r"^[A-Z][a-z0-9']+$")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
 FENCE_RE = re.compile(r"^```")

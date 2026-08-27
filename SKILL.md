@@ -4,7 +4,7 @@ description: Write and format planning docs, design docs, READMEs, ADRs, and tec
 license: MIT
 metadata:
   author: Spillwave Solutions
-  version: "1.1.0"
+  version: "1.1.5"
   organization: SpillwaveSolutions
 ---
 
@@ -89,7 +89,7 @@ python3 scripts/google_docs_style.py --lint --check path/to/doc.md
 The formatter:
 
 - Converts title-case headings to sentence case
-- Replaces em dashes
+- Replaces Unicode em dashes and en dashes. Leaves ASCII `--` alone so CLI examples stay intact
 - Lints for passive voice, first-person "we", missing H1, skipped heading levels, and weak sentence openers
 
 Do not rewrite fenced code blocks.
